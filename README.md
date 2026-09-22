@@ -113,3 +113,9 @@ TMDB Service          MongoDB
       |
       v
 TMDB API
+
+The React frontend communicates with the Node.js backend.
+
+The frontend does not communicate directly with TMDB.
+
+The Node.js backend acts as an abstraction layer between the frontend and the external movie service.
