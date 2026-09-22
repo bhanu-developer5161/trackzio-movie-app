@@ -20,14 +20,6 @@ The application provides a real movie-discovery experience where users can brows
 
 **https://github.com/bhanu-developer5161/trackzio-movie-app**
 
-### Project Documentation
-
-[View Project Documentation](./documentation/Trackzio_Movie_Discovery_App_Documentation.pdf)
-
-### Demo Video
-
-**Add your Loom or Google Drive video link here after recording the final demonstration.**
-
 ---
 
 ## ✨ Features
