@@ -1,0 +1,835 @@
+/* ========================================
+   GLOBAL APP
+======================================== */
+
+.app {
+  min-height: 100vh;
+  background: #0b1020;
+  color: #ffffff;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  width: 100%;
+  min-height: 72px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #11182d;
+  border-bottom: 1px solid #202a45;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo,
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #c7cee0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  text-align: center;
+  padding: 45px 20px 35px;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0 auto 14px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  font-weight: 800;
+}
+
+.hero p {
+  margin: 0 auto 28px;
+  max-width: 680px;
+  color: #aeb7cc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-box {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #303b5d;
+  border-radius: 10px;
+  outline: none;
+  background: #151d35;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.search-box input::placeholder {
+  color: #7f8ba7;
+}
+
+.search-box input:focus {
+  border-color: #6979ff;
+}
+
+.search-box button {
+  height: 50px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #5666f2;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.search-box button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+/* ========================================
+   GENRE SECTION
+======================================== */
+
+.genre-section {
+  margin: 10px 0 35px;
+  padding: 24px;
+  border: 1px solid #202a45;
+  border-radius: 16px;
+  background: #11182d;
+}
+
+.genre-heading h2 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+}
+
+.genre-heading p {
+  margin: 0 0 18px;
+  color: #8f9bb6;
+  font-size: 0.92rem;
+}
+
+.genre-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.genre-button {
+  padding: 9px 15px;
+  border: 1px solid #303b5d;
+  border-radius: 999px;
+  background: #161f38;
+  color: #cbd3e5;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: 0.2s ease;
+}
+
+.genre-button:hover {
+  border-color: #6979ff;
+  color: #ffffff;
+}
+
+.genre-button.active {
+  background: #5666f2;
+  border-color: #5666f2;
+  color: #ffffff;
+}
+
+.genre-loading {
+  color: #8f9bb6;
+}
+
+/* ========================================
+   MOVIE SECTION
+======================================== */
+
+.movie-section {
+  margin-top: 10px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+}
+
+.section-header span {
+  color: #8792aa;
+  font-size: 0.88rem;
+}
+
+/* ========================================
+   SORT
+======================================== */
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.sort-container label {
+  color: #9ba6bd;
+  font-size: 0.9rem;
+}
+
+.sort-container select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #303b5d;
+  border-radius: 8px;
+  background: #151d35;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ========================================
+   MOVIE GRID
+======================================== */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ========================================
+   MOVIE CARD
+======================================== */
+
+.movie-card {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background: #11182d;
+  border: 1px solid #202a45;
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b4770;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   POSTER
+======================================== */
+
+.poster-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #1a233c;
+  overflow: hidden;
+}
+
+.poster-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808ba5;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   WISHLIST BUTTON
+======================================== */
+
+.wishlist-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(8, 12, 26, 0.8);
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.wishlist-button:hover {
+  transform: scale(1.08);
+  background: rgba(8, 12, 26, 0.95);
+}
+
+.wishlist-button.saved {
+  color: #ff6b81;
+}
+
+/* ========================================
+   MOVIE INFO
+======================================== */
+
+.movie-info {
+  padding: 14px;
+}
+
+.movie-info h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.7em;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #929db6;
+  font-size: 0.82rem;
+}
+
+.movie-meta span:last-child {
+  white-space: nowrap;
+}
+
+/* ========================================
+   LOAD MORE
+======================================== */
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.load-more-button,
+.browse-button,
+.retry-button {
+  border: none;
+  border-radius: 9px;
+  padding: 12px 22px;
+  background: #5666f2;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.load-more-button:hover,
+.browse-button:hover,
+.retry-button:hover {
+  filter: brightness(1.08);
+}
+
+.load-more-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   END MESSAGE
+======================================== */
+
+.end-message {
+  padding: 30px 10px 10px;
+  text-align: center;
+  color: #7e8aa5;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   MESSAGES
+======================================== */
+
+.message {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  color: #a7b0c4;
+  padding: 30px 20px;
+}
+
+.message h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* ========================================
+   ERROR
+======================================== */
+
+.error-message {
+  margin-bottom: 25px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid #633340;
+  border-radius: 10px;
+  background: #2b1821;
+  color: #ffb6c2;
+}
+
+.error-message button {
+  border: none;
+  border-radius: 7px;
+  padding: 8px 15px;
+  background: #a83f57;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   MOVIE DETAILS
+======================================== */
+
+.movie-details-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #aeb7cc;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.movie-details {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.details-poster {
+  width: 300px;
+  max-width: 100%;
+}
+
+.details-poster img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #161f38;
+}
+
+.details-content {
+  min-width: 0;
+}
+
+.details-content h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 0 0 18px;
+  color: #949fb7;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.details-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  color: #bbc4d6;
+}
+
+.genres {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.genre {
+  padding: 7px 12px;
+  border: 1px solid #303b5d;
+  border-radius: 999px;
+  background: #151d35;
+  color: #cbd3e5;
+  font-size: 0.82rem;
+}
+
+.details-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.overview {
+  margin: 0 0 25px;
+  color: #aab4c9;
+  line-height: 1.75;
+}
+
+.details-wishlist-button {
+  border: none;
+  border-radius: 9px;
+  padding: 13px 20px;
+  background: #5666f2;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.details-wishlist-button:hover {
+  filter: brightness(1.08);
+}
+
+.details-wishlist-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.wishlist-message {
+  margin: 12px 0 0;
+  color: #9eabc3;
+}
+
+/* ========================================
+   WISHLIST PAGE
+======================================== */
+
+.wishlist-header {
+  margin-bottom: 25px;
+}
+
+.wishlist-header h1 {
+  margin: 0 0 6px;
+}
+
+.wishlist-header p {
+  margin: 0;
+  color: #8e99b1;
+}
+
+.movie-title {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.movie-title:hover {
+  text-decoration: underline;
+}
+
+.movie-info > p {
+  margin: 5px 0;
+  color: #929db6;
+  font-size: 0.85rem;
+}
+
+.remove-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px 12px;
+  border: 1px solid #633340;
+  border-radius: 8px;
+  background: #2b1821;
+  color: #ffb6c2;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background: #381d28;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 850px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .movie-details {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .details-poster {
+    width: 240px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sort-container {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .navbar {
+    min-height: 64px;
+    padding: 0 4%;
+  }
+
+  .logo,
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+
+  .container,
+  .movie-details-container {
+    width: 92%;
+    padding-top: 25px;
+  }
+
+  .hero {
+    padding: 30px 5px 25px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.92rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .genre-section {
+    padding: 18px;
+  }
+
+  .genre-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scrollbar-width: thin;
+  }
+
+  .genre-button {
+    flex: 0 0 auto;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .movie-info {
+    padding: 11px;
+  }
+
+  .movie-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .movie-meta {
+    font-size: 0.76rem;
+  }
+
+  .wishlist-button {
+    width: 36px;
+    height: 36px;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .sort-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort-container select {
+    width: 100%;
+  }
+
+  .movie-details {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .details-poster {
+    width: min(280px, 100%);
+    margin: 0 auto;
+  }
+
+  .details-content h1 {
+    font-size: 2rem;
+  }
+
+  .error-message {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .movie-grid {
+    gap: 10px;
+  }
+
+  .movie-info {
+    padding: 9px;
+  }
+
+  .movie-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
